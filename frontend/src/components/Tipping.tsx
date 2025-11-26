@@ -23,7 +23,7 @@ export const TippingUI: FC = () => {
         const provider = new AnchorProvider(connection, wallet as any, {
             preflightCommitment: "processed",
         });
-        return new Program<Tipping>(IDL, PROGRAM_ID, provider);
+        return new Program(IDL as any, provider) as any;
     };
 
     const fetchStats = async () => {
